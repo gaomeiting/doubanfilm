@@ -17,7 +17,7 @@ Page({
 
 	},
 	redirectHome() {
-		wx.redirectTo({
+		wx.switchTab({
 		  url: '../home/home'
 		})
 	}

@@ -1,7 +1,7 @@
 <view class="home">
 	<block wx:for="{{ boards }}" wx:key="key">
 		<swiper wx:if="{{index===0}}" class="slide" indicator-dots autoplay>
-			<swiper-item wx:for="{{item.movies}}" wx:for-item="movie" wx:key="id">
+			<swiper-item wx:for="{{item.movies}}" wx:for-item="movie" wx:key="id" wx:if="{{index<4}}">
 				<image src="{{movie.images.large}}" mode="aspectFill" lazy-load></image>
 			</swiper-item>
 		</swiper>
