@@ -1,0 +1,15 @@
+{
+  "pages":[
+    
+    "pages/search/search",
+    "pages/index/index",
+    "pages/home/home",
+    "pages/movie/movie"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

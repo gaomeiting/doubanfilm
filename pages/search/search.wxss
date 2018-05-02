@@ -1,0 +1,11 @@
+.search { padding: 32rpx; }
+.search .search-box {}
+.search .search-box input {}
+.search .list {}
+.search .list .item {}
+.search .item .img {}
+.search .item .img {}
+.search .item .img img {}
+.search .item .content {}
+.search .item .content text {}
+.search .item .score {}
