@@ -1,19 +1,25 @@
 <view class="search">
 	<view class="search-box">
-		 <!-- <input placeholder="这个只有在按钮点击的时候才聚焦" /> -->
-		<input type="text" placeholder="在此输入搜索内容" />
+		<input type="text" placeholder="在此输入搜索内容" confirm-type="search" bindchange="search" />
 	</view>
-	<view class="list">
-		<view class="item">
+	<scroll-view class="list" scroll-y="true" bindscrolltolower="pullUp">
+		<view class="item" wx:for="{{movies}}" wx:for-item="movie" wx:key="movie">
 			<view class="img">
-				<image src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2452075545.jpg" mode="aspectFill"></image>
+				<image src="{{movie.images.medium}}"></image>
 			</view>
 			<view class="content">
-				<text>幕后玩家</text>
-				<text>幕后玩家(2018)</text>
-				<text>导演：任鹏远</text>
+				<text>{{movie.title}}</text>
+				<text class="sub">{{movie.original_title}}({{movie.year}})</text>
+				<text class="sub">导演：{{movie.directors[0].name}}</text>
 			</view>
-			<text class="score">4.9</text>
+			<text class="score" wx:if="{{movie.rating.average}}">{{movie.rating.average}}</text>
 		</view>
-	</view>
+		<view class="more" wx:if="{{more}}">
+			<image src="../../images/loading.gif"></image>
+			<text>玩了命的加载中...</text>
+		</view>
+		<text class="end" wx:if="{{!more && movies.length}}">
+			没有更多内容了
+		</text>
+	</scroll-view>
 </view>
