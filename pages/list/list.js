@@ -7,14 +7,21 @@ Page({
 	},
 	onLoad(options) {
 		this.setData({
-			url: options.key
+			url: options.key,
+			title: options.title
 		})
 		this.search();
+	},
+	onReady() {
+		const _this=this
+		wx.setNavigationBarTitle({
+			title: _this.data.title
+		})
 	},
 	goMovieDetail(e) {
 	    const movie= e.currentTarget.dataset.movie;
 	    wx.navigateTo({
-	      url: `../movie/movie?id=${movie.id}`
+	      url: `../movie/movie?id=${movie.id}&title=${movie.title}`
 	    })
 	},
 	search(e) {

@@ -16,14 +16,16 @@ Page({
   },
   goMovieDetail(e) {
     const movie= e.currentTarget.dataset.movie;
+    const title = e.currentTarget.dataset.movie.title;
     wx.navigateTo({
-      url: `../movie/movie?id=${movie.id}`
+      url: `../movie/movie?id=${movie.id}&title=${title}`
     })
   },
   allMovies(e) {
     const key = e.currentTarget.dataset.movie.key;
+    const title = e.currentTarget.dataset.movie.title;
     wx.navigateTo({
-      url: `../list/list?key=${key}`
+      url: `../list/list?key=${key}&title=${title}`
     })
   },
   _ajaxData() {

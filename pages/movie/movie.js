@@ -8,8 +8,17 @@ Page({
 	},
 	onLoad(options) {
 		const id = options.id;
+		this.setData({
+			options: options
+		})
 		const url = `subject/${id}`
 		this._ajaxMovie(url)
+	},
+	onReady() {
+		const _this=this
+		wx.setNavigationBarTitle({
+			title: _this.data.options.title
+		})
 	},
 	_ajaxMovie(url) {
 		wx.showLoading({
