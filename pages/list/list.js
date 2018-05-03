@@ -1,10 +1,15 @@
 const app=getApp();
 Page({
 	data: {
-		inputValue: "",
 		currentPage: 1,
 		more: false,
 		movies: []
+	},
+	onLoad(options) {
+		this.setData({
+			url: options.key
+		})
+		this.search();
 	},
 	goMovieDetail(e) {
 	    const movie= e.currentTarget.dataset.movie;
@@ -13,13 +18,12 @@ Page({
 	    })
 	},
 	search(e) {
-		const value = e.detail.value;
+		console.log(123,"list")
 		this.setData({
 			currentPage: 1,
-			more: true,
-			inputValue: value
+			more: true
 		})
-		app.douban.find("search", this.currentPage, 10, value).then(res => {
+		app.douban.find(this.data.url, this.currentPage, 10).then(res => {
 			const movies=this.data.movies.concat(res.subjects)
 			this.setData({
 				movies
@@ -30,12 +34,11 @@ Page({
 	pullUp() {
 		if(!this.data.more) return;
 		const currentPage=this.data.currentPage+1;
-		console.log(currentPage)
 		this.setData({
 			currentPage
 		})
 		const value = this.data.inputValue;
-		app.douban.find("search", this.data.currentPage, 10, value).then(res => {
+		app.douban.find(this.data.url, this.data.currentPage, 10).then(res => {
 			const movies=this.data.movies.concat(res.subjects)
 			this.setData({
 				movies

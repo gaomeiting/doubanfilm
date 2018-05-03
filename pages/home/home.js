@@ -20,6 +20,12 @@ Page({
       url: `../movie/movie?id=${movie.id}`
     })
   },
+  allMovies(e) {
+    const key = e.currentTarget.dataset.movie.key;
+    wx.navigateTo({
+      url: `../list/list?key=${key}`
+    })
+  },
   _ajaxData() {
   	wx.showLoading({
   		title:"拼命加载中"

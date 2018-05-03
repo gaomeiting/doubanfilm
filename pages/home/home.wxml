@@ -6,7 +6,7 @@
 			</swiper-item>
 		</swiper>
 		<view class="home-section" wx:if="{{index < boards.length-1}}" wx:key="id">
-			<text class="title"><text>{{item.title}}</text><!-- <text class="location">北京</text> --></text>
+			<text class="title" bindtap="allMovies" data-movie="{{item}}"><text>{{item.title}}</text></text>
 			<scroll-view scroll-x class="list-wrap">
 				<view class="list">
 					<view class="list-item" wx:for="{{item.movies}}" wx:for-item="movie" wx:key="id" bindtap="goMovieDetail" data-movie="{{movie}}">
