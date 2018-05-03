@@ -9,7 +9,7 @@ Page({
 	goMovieDetail(e) {
 	    const movie= e.currentTarget.dataset.movie;
 	    wx.navigateTo({
-	      url: `../movie/movie?id=${movie.id}`
+	      url: `../movie/movie?id=${movie.id}&title=${movie.title}`
 	    })
 	},
 	search(e) {
