@@ -1,12 +1,4 @@
 @import "../template/movie-list"
-.search { padding: 16rpx 0; }
-scroll-view {
-	position: fixed;
-	top:0;
-	bottom:0;
-	left: 0;
-	width: 100%;
-	box-sizing: border-box;
-	padding: 0 32rpx;
-}
+.search { padding: 16rpx 32rpx; }
+
 

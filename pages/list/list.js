@@ -18,6 +18,9 @@ Page({
 			title: _this.data.title
 		})
 	},
+	onReachBottom() {
+		this.pullUp();
+	},
 	goMovieDetail(e) {
 	    const movie= e.currentTarget.dataset.movie;
 	    wx.navigateTo({
@@ -25,7 +28,6 @@ Page({
 	    })
 	},
 	search(e) {
-		console.log(123,"list")
 		this.setData({
 			currentPage: 1,
 			more: true

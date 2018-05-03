@@ -6,6 +6,9 @@ Page({
 		more: false,
 		movies: []
 	},
+	onReachBottom() {
+		this.pullUp();
+	},
 	goMovieDetail(e) {
 	    const movie= e.currentTarget.dataset.movie;
 	    wx.navigateTo({

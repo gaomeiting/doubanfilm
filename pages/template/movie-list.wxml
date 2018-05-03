@@ -12,7 +12,7 @@
 	</view>
 </template>
 <template name="list">
-	<scroll-view class="list" scroll-y="true" bindscrolltolower="pullUp">
+	<view class="list">
 		<template is="item" data="{{movies}}" />
 		<view class="more" wx:if="{{more}}">
 			<image src="../../images/loading.gif"></image>
@@ -21,5 +21,5 @@
 		<text class="end" wx:if="{{!more && movies.length}}">
 			没有更多内容了
 		</text>
-	</scroll-view>
+	</view>
 </template>
